@@ -137,3 +137,15 @@ function CapitalizeStringWords(string) {
 
   return capitalizedWords.join(" ");
 }
+
+function GetData(item) {
+  let data = localStorage.getItem(item);
+  console.log("Data Retrieved from Local Storage");
+  return JSON.parse(data);
+}
+
+function SetData(item, data) {
+  let jsonData = JSON.stringify(data);
+  localStorage.setItem(item, jsonData);
+  console.log("Data Saved to Local Storage");
+}

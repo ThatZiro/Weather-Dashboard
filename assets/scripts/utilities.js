@@ -45,7 +45,7 @@ function PopAlert(text, type, duration) {
  * @param {Object} options - Customizable options for the fetch request (e.g., headers, method).
  * @returns {Promise<any>} A Promise that resolves with the fetched JSON data or rejects with an error message.
  */
-async function getApiJson(requestUrl, options) {
+async function GetApiJson(requestUrl, options) {
   try {
     const response = await fetch(requestUrl, options);
 
@@ -125,5 +125,15 @@ let states = [
 ];
 
 function UnixToDate(unix) {
-  return (date = new Date(unix * 1000));
+  return new Date(unix * 1000);
+}
+
+function CapitalizeStringWords(string) {
+  let words = string.split(" ");
+
+  let capitalizedWords = words.map((word) => {
+    return word.charAt(0).toUpperCase() + word.slice(1);
+  });
+
+  return capitalizedWords.join(" ");
 }

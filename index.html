@@ -71,7 +71,9 @@
             <div class="container d-flex h-75">
               <div class="col-6 h-75 d-flex flex-column justify-content-around">
                 <h2 id="City-Name">Atlanta, GA</h2>
-                <p id="Updated-Text">Updated a few minutes ago</p>
+                <p id="Updated-Text" style="visibility: hidden">
+                  Updated a few minutes ago
+                </p>
                 <div class="d-flex">
                   <img
                     id="Weather-Icon"
@@ -82,19 +84,19 @@
                   />
                   <h2 id="Current-Temp">83°</h2>
                   <div class="d-flex flex-column">
-                    <button id="F-Button" lass="button-style">F</button>
-                    <button>C</button>
+                    <button style="visibility: hidden">F</button>
+                    <button style="visibility: hidden">C</button>
                   </div>
                 </div>
-                <h3>Mostly Cloudy - Wed, 4, 9:10 pm</h3>
+                <h3 id="Current-Status">Mostly Cloudy - Wed, 4, 9:10 pm</h3>
               </div>
               <div class="col-6 h-75 d-flex flex-column justify-content-center">
-                <h2 id="Percipitation">Precipitation 17%</h2>
+                <h2 id="Feels-Like">Feels Like</h2>
                 <h2 id="Humidity">Humidity 70%</h2>
                 <h2 id="Wind">Wind 6%</h2>
               </div>
             </div>
-            <div class="h-25">
+            <div class="h-25" style="visibility: hidden">
               <div class="d-flex justify-content-between w-100">
                 <label for="customRange1" class="form-label">10pm</label>
                 <label for="customRange2" class="form-label">1am</label>
@@ -119,6 +121,7 @@
           <div class="m-3 p-0">
             <div class="container-fluid h-100 w-100">
               <div
+                id="Forecast"
                 class="row d-flex flex-row flex-wrap align-items-center h-100 gap-3"
               >
                 <div
@@ -129,6 +132,7 @@
                     src="https://openweathermap.org/img/wn/10d@2x.png"
                     width="100"
                     height="100"
+                    alt=""
                   />
                   <h3>H 83°</h3>
                   <h3>L 57°</h3>
@@ -141,6 +145,7 @@
                     src="https://openweathermap.org/img/wn/10d@2x.png"
                     width="100"
                     height="100"
+                    alt=""
                   />
                   <h3>H 83°</h3>
                   <h3>L 57°</h3>
@@ -153,6 +158,7 @@
                     src="https://openweathermap.org/img/wn/10d@2x.png"
                     width="100"
                     height="100"
+                    alt=""
                   />
                   <h3>H 83°</h3>
                   <h3>L 57°</h3>
@@ -165,6 +171,7 @@
                     src="https://openweathermap.org/img/wn/10d@2x.png"
                     width="100"
                     height="100"
+                    alt=""
                   />
                   <h3>H 83°</h3>
                   <h3>L 57°</h3>
@@ -177,6 +184,7 @@
                     src="https://openweathermap.org/img/wn/10d@2x.png"
                     width="100"
                     height="100"
+                    alt=""
                   />
                   <h3>H 83°</h3>
                   <h3>L 57°</h3>
@@ -189,6 +197,7 @@
                     src="https://openweathermap.org/img/wn/10d@2x.png"
                     width="100"
                     height="100"
+                    alt=""
                   />
                   <h3>H 83°</h3>
                   <h3>L 57°</h3>

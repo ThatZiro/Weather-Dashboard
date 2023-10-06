@@ -15,8 +15,190 @@
     <title>Document</title>
   </head>
   <body>
-    <div class="alert alert-success">Bootstrap is working!</div>
-    <h1>Hello, World!</h1>
+    <div style="position: absolute; width: 100%">
+      <div id="Alert" class="alert alert-success"></div>
+    </div>
+    <header
+      class="w-100 bg-primary d-flex align-items-center justify-content-center custom-header"
+    >
+      <h1 class="m-0 p-0 text-center">My Weather Dashboard</h1>
+    </header>
+    <main class="container-fluid d-flex w-100 h-full custom-bg">
+      <div id="Search-Bar" class="col-4">
+        <div class="row container-fluid h-full">
+          <form class="m-3 mb-0 bg-lightBlue">
+            <div class="mb-3">
+              <label for="exampleInputPassword1" class="form-label"
+                >Search for a City:</label
+              >
+              <input class="text" placeholder="San Diego" id="Input-City" />
+            </div>
+            <button id="Input-Button" class="btn btn-primary w-100">
+              Submit
+            </button>
+          </form>
+          <div
+            class="btn-group-vertical w-100 m-3 mt-0 py-4 gap-4 bg-lightBlue"
+            role="group"
+            aria-label="Vertical button group"
+          >
+            <button type="button" class="btn btn-info rounded-4">
+              Atlanta
+            </button>
+            <button type="button" class="btn btn-info rounded-4">Denver</button>
+            <button type="button" class="btn btn-info rounded-4">
+              Seattle
+            </button>
+            <button type="button" class="btn btn-info rounded-4">
+              San Francisco
+            </button>
+            <button type="button" class="btn btn-info rounded-4">
+              New York
+            </button>
+            <button type="button" class="btn btn-info rounded-4">
+              Orlando
+            </button>
+            <button type="button" class="btn btn-info rounded-4">
+              Chicago
+            </button>
+            <button type="button" class="btn btn-info rounded-4">Austin</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-8">
+        <div class="row container-fluid h-60 text-light">
+          <div class="bg-primary m-3 rounded-5 mb-0">
+            <div class="container d-flex h-75">
+              <div class="col-6 h-75 d-flex flex-column justify-content-around">
+                <h2 id="City-Name">Atlanta, GA</h2>
+                <p id="Updated-Text">Updated a few minutes ago</p>
+                <div class="d-flex">
+                  <img
+                    id="Weather-Icon"
+                    src="https://openweathermap.org/img/wn/10d@2x.png"
+                    width="100"
+                    height="100"
+                    alt="Weather Icon"
+                  />
+                  <h2 id="Current-Temp">83°</h2>
+                  <div class="d-flex flex-column">
+                    <button id="F-Button" lass="button-style">F</button>
+                    <button>C</button>
+                  </div>
+                </div>
+                <h3>Mostly Cloudy - Wed, 4, 9:10 pm</h3>
+              </div>
+              <div class="col-6 h-75 d-flex flex-column justify-content-center">
+                <h2 id="Percipitation">Precipitation 17%</h2>
+                <h2 id="Humidity">Humidity 70%</h2>
+                <h2 id="Wind">Wind 6%</h2>
+              </div>
+            </div>
+            <div class="h-25">
+              <div class="d-flex justify-content-between w-100">
+                <label for="customRange1" class="form-label">10pm</label>
+                <label for="customRange2" class="form-label">1am</label>
+                <label for="customRange3" class="form-label">4am</label>
+                <label for="customRange4" class="form-label">7am</label>
+                <label for="customRange5" class="form-label">10am</label>
+                <label for="customRange6" class="form-label">1pm</label>
+                <label for="customRange7" class="form-label">4pm</label>
+                <label for="customRange8" class="form-label">7pm</label>
+              </div>
+              <input
+                type="range"
+                class="form-range"
+                min="0"
+                max="21"
+                id="customRange2"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="row container-fluid h-30">
+          <div class="m-3 p-0">
+            <div class="container-fluid h-100 w-100">
+              <div
+                class="row d-flex flex-row flex-wrap align-items-center h-100 gap-3"
+              >
+                <div
+                  class="col-xl-1 col-md-3 col-12 card card-body d-flex justify-content-center align-items-center"
+                >
+                  <h2 class="">Wed 5</h2>
+                  <img
+                    src="https://openweathermap.org/img/wn/10d@2x.png"
+                    width="100"
+                    height="100"
+                  />
+                  <h3>H 83°</h3>
+                  <h3>L 57°</h3>
+                </div>
+                <div
+                  class="col-xl-1 col-md-3 col-12 card card-body d-flex justify-content-center align-items-center"
+                >
+                  <h2 class="">Wed 5</h2>
+                  <img
+                    src="https://openweathermap.org/img/wn/10d@2x.png"
+                    width="100"
+                    height="100"
+                  />
+                  <h3>H 83°</h3>
+                  <h3>L 57°</h3>
+                </div>
+                <div
+                  class="col-xl-1 col-md-3 col-12 card card-body d-flex justify-content-center align-items-center"
+                >
+                  <h2 class="">Wed 5</h2>
+                  <img
+                    src="https://openweathermap.org/img/wn/10d@2x.png"
+                    width="100"
+                    height="100"
+                  />
+                  <h3>H 83°</h3>
+                  <h3>L 57°</h3>
+                </div>
+                <div
+                  class="col-xl-1 col-md-3 col-12 card card-body d-flex justify-content-center align-items-center"
+                >
+                  <h2 class="">Wed 5</h2>
+                  <img
+                    src="https://openweathermap.org/img/wn/10d@2x.png"
+                    width="100"
+                    height="100"
+                  />
+                  <h3>H 83°</h3>
+                  <h3>L 57°</h3>
+                </div>
+                <div
+                  class="col-xl-1 col-md-3 col-12 card card-body d-flex justify-content-center align-items-center"
+                >
+                  <h2 class="">Wed 5</h2>
+                  <img
+                    src="https://openweathermap.org/img/wn/10d@2x.png"
+                    width="100"
+                    height="100"
+                  />
+                  <h3>H 83°</h3>
+                  <h3>L 57°</h3>
+                </div>
+                <div
+                  class="col-xl-1 col-md-3 col-12 card card-body d-flex justify-content-center align-items-center"
+                >
+                  <h2 class="">Wed 5</h2>
+                  <img
+                    src="https://openweathermap.org/img/wn/10d@2x.png"
+                    width="100"
+                    height="100"
+                  />
+                  <h3>H 83°</h3>
+                  <h3>L 57°</h3>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
 
     <!-- ================= SCRIPTS =============== -->
     <!--  Bootstrap JS (Popper.js and Bootstrap.js) 5.3.2 -->
@@ -34,6 +216,7 @@
     ></script>
 
     <!-- Custom Script -->
+    <script src="./assets/scripts/utilities.js"></script>
     <script src="./assets/scripts/script.js"></script>
   </body>
 </html>

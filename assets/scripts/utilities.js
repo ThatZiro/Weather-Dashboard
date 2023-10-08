@@ -68,7 +68,7 @@ function StateToAbbr(state) {
       return element[1];
     }
   }
-  return "NA";
+  return "";
 }
 
 let states = [

@@ -11,6 +11,8 @@ $(document).ready(function () {
     }
   });
   $("#Input-Button").on("click", Submit);
+
+  $(searchButtons).on("click", SearchButton);
 });
 
 let geoData;
@@ -23,6 +25,11 @@ function Submit(event) {
   SearchCity(city);
   UpdateSearchButtons();
 }
+
+function SearchButton(event){
+SearchCity($(this).text());
+}
+
 function SearchCity(city) {
   let key = `5ceff8d977d5d19c7bead1274202f97a`;
   let url_Geo = `http://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=5&appid=${key}`;
@@ -138,6 +145,9 @@ function AddHistory(city) {
 
 function UpdateSearchButtons(city) {
   let history = GetData("weatherHistory");
+  if (!history) {
+    history = [];
+  }
   for (let i = 0; i < searchButtons.length; i++) {
     if (history[i]) {
       $(searchButtons[i]).text(CapitalizeStringWords(history[i]));

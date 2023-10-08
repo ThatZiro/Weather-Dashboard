@@ -2,15 +2,34 @@ $(document).ready(function () {
   // Test jQuery
   PopAlert("Document Loaded Successfully!", "success", 2000);
   SearchCity("atlanta");
-  $("#Input-Button").on("click", SearchCity);
+  searchButtons = $("#Search-Buttons").children("button");
+  UpdateSearchButtons();
+  //Clear Local Storage with Ctrl - C
+  $(document).keydown(function (event) {
+    if (event.ctrlKey && event.key === "c") {
+      localStorage.removeItem("weatherHistory");
+    }
+  });
+  $("#Input-Button").on("click", Submit);
+
+  $(searchButtons).on("click", SearchButton);
 });
+
 let geoData;
+let searchButtons;
 
 function Submit(event) {
-  event.preventDefault(event);
+  event.preventDefault();
   let city = $("#Input-City").val();
+  AddHistory(city);
   SearchCity(city);
+  UpdateSearchButtons();
 }
+
+function SearchButton(event){
+SearchCity($(this).text());
+}
+
 function SearchCity(city) {
   let key = `5ceff8d977d5d19c7bead1274202f97a`;
   let url_Geo = `http://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=5&appid=${key}`;
@@ -101,13 +120,41 @@ function LoadCards(data) {
       .eq(3)
       .text("L " + Math.round(cardData.temp.min) + "°");
   }
-  //Make 6 Cards
-  //Add Date
-  //data.daily[0].dt
-  //Add Icon
-  //data.daily[0].weather[0].icon
-  //Add High Temp
-  //data.daily[0].temp.max
-  //Add Low Temp
-  //data.daily[0].temp.min
+}
+
+function AddHistory(city) {
+  city = city.toLowerCase();
+  let history = GetData("weatherHistory");
+
+  if (!history) {
+    history = [];
+  }
+
+  let uniqueCities = [];
+
+  for (const item of history) {
+    if (item !== city) {
+      uniqueCities.push(item);
+    }
+  }
+
+  uniqueCities.unshift(city);
+
+  SetData("weatherHistory", uniqueCities);
+}
+
+function UpdateSearchButtons(city) {
+  let history = GetData("weatherHistory");
+  if (!history) {
+    history = [];
+  }
+  for (let i = 0; i < searchButtons.length; i++) {
+    if (history[i]) {
+      $(searchButtons[i]).text(CapitalizeStringWords(history[i]));
+      $(searchButtons[i]).attr("style", "visibility: visible");
+    } else {
+      $(searchButtons[i]).text(".");
+      $(searchButtons[i]).attr("style", "visibility: hidden");
+    }
+  }
 }

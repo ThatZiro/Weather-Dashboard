@@ -1,3 +1,61 @@
-body {
-  background-color: magenta;
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@800&family=Young+Serif&display=swap");
+:root {
+  --darkBlueDarker: #1700ea;
+  --darkBlue: #2f91c6;
+  --lightBlueDarker: #6079e7;
+  --lightBlue: #768ef6;
+  font-family: "Young Serif", serif;
+}
+.custom-header {
+  background-image: linear-gradient(
+    to Right,
+    var(--darkBlue),
+    var(--darkBlueDarker)
+  );
+  height: 15vh;
+  color: white;
+  font-family: "Playfair Display", serif;
+  border-bottom: 5px solid black;
+}
+.custom-header h1 {
+  font-size: 5rem;
+}
+.h-full {
+  height: 85vh;
+}
+.h-60 {
+  height: 50vh;
+}
+.h-30 {
+  height: 35vh;
+}
+.custom-bg {
+  background-image: linear-gradient(
+    to bottom,
+    var(--lightBlueDarker),
+    var(--lightBlue)
+  );
+}
+
+.bg-lightBlue {
+  background-color: var(--lightBlue);
+}
+#Alert {
+  height: 50px;
+}
+
+.card {
+  width: 190px;
+  height: 300px;
+  border-radius: 10px;
+  background: var(--lightBlue);
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 50px -12px inset,
+    rgb(42, 38, 107) 0px 18px 26px -18px inset;
+  transition: all ease-in 0.2s;
+}
+
+.card:hover {
+  transform: scale(1.1);
+  background: #7488fc;
+  border-radius: 30px;
 }

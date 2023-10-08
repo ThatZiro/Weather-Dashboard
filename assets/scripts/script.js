@@ -26,8 +26,8 @@ function Submit(event) {
   UpdateSearchButtons();
 }
 
-function SearchButton(event){
-SearchCity($(this).text());
+function SearchButton(event) {
+  SearchCity($(this).text());
 }
 
 function SearchCity(city) {
@@ -109,16 +109,21 @@ function LoadCards(data) {
     //Load Icon
     let iconUrl = `https://openweathermap.org/img/w/${cardData.weather[0].icon}.png`;
     $(card).children().eq(1).attr("src", iconUrl);
+    console.log(cardData);
 
     //Load Temps
     $(card)
       .children()
       .eq(2)
-      .text("H " + Math.round(cardData.temp.max) + "°");
+      .text("Temp " + Math.round(cardData.temp.day) + "°");
     $(card)
       .children()
       .eq(3)
-      .text("L " + Math.round(cardData.temp.min) + "°");
+      .text("Humid " + Math.round(cardData.humidity) + "%");
+    $(card)
+      .children()
+      .eq(4)
+      .text("Wind  " + Math.round(cardData.wind_speed) + "mph");
   }
 }
 

@@ -6,6 +6,13 @@
   --lightBlue: #768ef6;
   font-family: "Young Serif", serif;
 }
+#City-Name {
+  margin-top: 50px;
+}
+
+#Current-Temp {
+  font-size: 6rem;
+}
 .custom-header {
   background-image: linear-gradient(
     to Right,
@@ -18,7 +25,7 @@
   border-bottom: 5px solid black;
 }
 .custom-header h1 {
-  font-size: 5rem;
+  font-size: 4rem;
 }
 .h-full {
   height: 85vh;
@@ -35,6 +42,7 @@
     var(--lightBlueDarker),
     var(--lightBlue)
   );
+  background-repeat: no-repeat;
 }
 
 .bg-lightBlue {
@@ -55,7 +63,41 @@
 }
 
 .card:hover {
-  transform: scale(1.1);
+  transform: scale(1.05);
   background: #7488fc;
   border-radius: 30px;
+}
+
+label {
+  font-size: 3rem;
+  font-weight: 600;
+  color: white;
+}
+
+@media screen and (max-width: 1200px) {
+  :root {
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .displaybox {
+    flex-direction: column;
+  }
+  .displaybox * {
+    width: 100%;
+  }
+
+  label {
+    font-size: 2rem;
+    font-weight: 600;
+    color: white;
+  }
+}
+@media screen and (max-width: 400px) {
+  label {
+    font-size: 1rem;
+    font-weight: 300;
+    color: white;
+  }
 }
